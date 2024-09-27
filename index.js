@@ -58,3 +58,39 @@ if (hacker1.localeCompare(hacker2) < 0) {
 } else {
     console.log("What?! You both have the same name?");
 }
+
+
+// Bonus 1:
+
+let longText = `At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi.`;
+let wordCount = longText.split(/\s+/).length;
+console.log("Number of words: " + wordCount);
+
+let etCount = (longText.match(/\bet\b/g) || []).length;
+console.log("Number of times the Latin word 'et' appears: " + etCount);
+
+// Bonus 2
+
+let phraseToCheck = "A man, a plan, a canal, Panama!";
+let cleanedPhrase = "";
+for (let i = 0; i < phraseToCheck.length; i++) {
+    let char = phraseToCheck[i].toLowerCase();
+
+    if (char >= 'a' && char <= 'z') {
+        clearInterval += char;
+    }
+}
+
+let isPalindrome = true;
+for (let i = 0; i < cleanedPhrase.length / 2; i++) {
+    if (cleanedPhrase[i] !== cleanedPhrase[cleanedPhrase.length - 1 - i]) {
+        isPalindrome = false;
+        break;
+    }
+}
+
+if (isPalindrome) {
+    console.log(`"${phraseToCheck}" is a palindrome!`);
+} else {
+    console.log(`"${phraseToCheck}" is not a palidrome.`);
+}
